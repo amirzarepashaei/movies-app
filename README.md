@@ -4,6 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Check [package.json](https://github.com/amirzarepashaei/movies-app/blob/master/package.json) for dependencies.
 
+You can browse through the library and find your favorite movies.
+
+You can filter the movies based on either their names or genres.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
