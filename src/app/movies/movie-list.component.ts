@@ -33,7 +33,8 @@ export class MovieListComponent implements OnInit {
   filteredMovies: IMovie[] = [];
   movies: IMovie[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService) {
+  }
 
   performFilter(filterBy: string): IMovie[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -51,7 +52,7 @@ export class MovieListComponent implements OnInit {
         this.movies = movies;
         this.filteredMovies = this.movies;
       },
-      error => this.errorMessage = <any> error
+      error => this.errorMessage = error as any
     );
   }
 }

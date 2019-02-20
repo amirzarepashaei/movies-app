@@ -30,7 +30,7 @@ export class MovieSpecComponent implements OnInit {
   getMovie(id: number) {
     this.movieService.getMovie(id).subscribe(
       movie => this.movie = movie,
-      error => this.errorMessage = <any> error);
+      error => this.errorMessage = error as any);
   }
 
   onBack(): void {
