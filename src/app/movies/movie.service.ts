@@ -14,7 +14,7 @@ export class MovieService {
 
   getMovies(): Observable<IMovie[]> {
     return this.http.get<IMovie[]>(this.movieUrl).pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data))),
+      tap(data => console.log('data received.')),
       catchError(this.handleError)
     );
   }

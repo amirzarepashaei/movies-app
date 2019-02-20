@@ -14,16 +14,22 @@ export class MovieListComponent implements OnInit {
   imageMargin = 2;
   showImage = true;
   errorMessage = '';
-
-  _listFilter = '';
-  get listFilter(): string {
-    return this._listFilter;
+  nameFilter = '';
+  textFilter = '';
+  get movieNameFilter(): string {
+    return this.nameFilter;
   }
-  set listFilter(value: string) {
-    this._listFilter = value;
-    this.filteredMovies = this.listFilter ? this.performFilter(this.listFilter) : this.movies;
+  set movieNameFilter(value: string) {
+    this.nameFilter = value;
+    this.filteredMovies = this.movieNameFilter ? this.performFilter(this.movieNameFilter) : this.movies;
   }
-
+  get genreFilter(): string {
+    return this.textFilter;
+  }
+  set genreFilter(value: string) {
+    this.textFilter = value;
+    this.filteredMovies = this.genreFilter ? this.performGenreFilter(this.genreFilter) : this.movies;
+  }
   filteredMovies: IMovie[] = [];
   movies: IMovie[] = [];
 
@@ -33,6 +39,11 @@ export class MovieListComponent implements OnInit {
     filterBy = filterBy.toLocaleLowerCase();
     return this.movies.filter((movie: IMovie) =>
       movie.movieName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  }
+  performGenreFilter(filterBy: string): IMovie[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.movies.filter((movie: IMovie) =>
+      movie.genres.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
   ngOnInit(): void {
     this.movieService.getMovies().subscribe(

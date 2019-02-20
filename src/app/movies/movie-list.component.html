@@ -1,19 +1,37 @@
 <div class='card text-white black'>
   <div class='card-header card-header-custom'>
-    {{pageTitle}}
+    <h4>{{pageTitle}}</h4>
   </div>
   <div class='card-body'>
     <div class='row'>
-      <h4 class='col-md-2'>Apply filter by:</h4>
+      <h4 class='col-md-4'>Apply filter by name or genre:</h4>
       <div class='col-md-4'>
-        <input type='text' class="form-control" placeholder="Movie name" id="inputFilter" autofocus
-               [(ngModel)]='listFilter' />
+        <span class="input input--kuro">
+          <input class="input__field input__field--kuro" type="text" id="inputFilter" [(ngModel)]='movieNameFilter'/>
+          <label class="input__label input__label--kuro" for="inputFilter">
+            <span class="input__label-content input__label-content--kuro">Movie name</span>
+          </label>
+        </span>
+      </div>
+      <div class="col-md-4">
+        <span class="input input--kuro">
+          <input class="input__field input__field--kuro" type="text" id="inputGenreFilter" [(ngModel)]='genreFilter'/>
+          <label class="input__label input__label--kuro" for="inputGenreFilter">
+            <span class="input__label-content input__label-content--kuro">Movie genre</span>
+          </label>
+        </span>
       </div>
     </div>
     <div class='row'
-         *ngIf='listFilter'>
+         *ngIf='movieNameFilter'>
       <div class='col-md-6'>
-        <h4>Filtered value is: {{listFilter}}</h4>
+        <h4>Movie name value is: {{movieNameFilter}}</h4>
+      </div>
+    </div>
+    <div class='row'
+         *ngIf='genreFilter'>
+      <div class='col-md-6'>
+        <h4>Movie genre value is: {{genreFilter}}</h4>
       </div>
     </div>
     <div class='table-responsive'>
