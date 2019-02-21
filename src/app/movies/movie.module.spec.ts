@@ -7,7 +7,7 @@ describe('MovieModule', () => {
     movieModule = new MovieModule();
   });
 
-  it('should create an instance', () => {
+  it('should bootstrap movie components and wire them to main module', () => {
     expect(movieModule).toBeTruthy();
   });
 });

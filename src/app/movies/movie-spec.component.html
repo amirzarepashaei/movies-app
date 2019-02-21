@@ -7,7 +7,7 @@
       <i class='fa fa-chevron-left'></i> Back
     </button>&emsp;
     <div class="float-right text-color">
-      {{pageTitle + ': ' + movie.movieName}}
+      {{movie.movieName}}
     </div>
   </div>
   <div class='card-body'>
@@ -45,7 +45,8 @@
              [style.width.px]='200'
              [style.margin.px]='2'
              [src]='movie.image'
-             [title]='movie.movieName'>
+             [title]='movie.movieName'
+             alt="movie image">
       </div>
     </div>
   </div>

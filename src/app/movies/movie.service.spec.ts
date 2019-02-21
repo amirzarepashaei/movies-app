@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { MovieService } from './movie.service';
-import {RouterTestingModule} from '@angular/router/testing';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('MovieService', () => {
   beforeEach(() => TestBed.configureTestingModule({
@@ -11,7 +11,7 @@ describe('MovieService', () => {
     ],
   }));
 
-  it('should be created', () => {
+  it('should get movies', () => {
     const service: MovieService = TestBed.get(MovieService);
     expect(service).toBeTruthy();
   });

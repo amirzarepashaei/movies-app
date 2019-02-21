@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MovieListComponent } from './movie-list.component';
-import {RouterTestingModule} from '@angular/router/testing';
-import {FormsModule} from '@angular/forms';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('MovieListComponent', () => {
   let component: MovieListComponent;
@@ -26,7 +26,7 @@ describe('MovieListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should show library', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -14,12 +14,23 @@
         </span>
       </div>
       <div class="col-md-4">
-        <span class="input input--kuro">
-          <input class="input__field input__field--kuro" type="text" id="inputGenreFilter" [(ngModel)]='genreFilter'/>
-          <label class="input__label input__label--kuro" for="inputGenreFilter">
-            <span class="input__label-content input__label-content--kuro">Movie genre</span>
-          </label>
-        </span>
+        <div class="select">
+          <label for="genreSelect"></label>
+          <select name="genreSelect" id="genreSelect" [(ngModel)]='genreFilter'>
+            <option value="" selected >Select a genre</option>
+            <option value="scifi">scifi</option>
+            <option value="sport">sport</option>
+            <option value="action">action</option>
+            <option value="history">history</option>
+            <option value="drama">drama</option>
+            <option value="biography">biography</option>
+            <option value="crime">crime</option>
+            <option value="adventure">adventure</option>
+            <option value="comedy">comedy</option>
+            <option value="mystery">mystery</option>
+            <option value="thriller">thriller</option>
+          </select>
+        </div>
       </div>
     </div>
     <div class='row'
@@ -55,7 +66,8 @@
                    [src]='movie.image'
                    [title]='movie.movieName'
                    [style.width.px]='imageWidth'
-                   [style.margin.px]='imageMargin'>
+                   [style.margin.px]='imageMargin'
+                   alt="image of the movie">
             </a>
           </td>
           <td>

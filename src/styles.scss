@@ -73,7 +73,7 @@ div {
   padding: 0.8em;
   width: 60%;
   border: none;
-  border-radius: 0;
+  border-radius: .25em;
   background: #f0f0f0;
   color: #aaa;
   font-weight: bold;
@@ -95,7 +95,6 @@ div {
   -moz-osx-font-smoothing: grayscale;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -182,6 +181,62 @@ div {
   animation: anim-2 0.3s forwards;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 0;
+  box-shadow: none;
+  background: #232323;
+  background-image: none;
+}
+
+.select {
+  position: relative;
+  display: block;
+  max-width: 320px;
+  height: 60px;
+  line-height: 3;
+  background: #232323;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em;
+  color: #dc3545;
+  cursor: pointer;
+  border: 4px solid #747981;
+  border-radius: 0;
+  font-size: small;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.select {
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: #232323;
+    border: 4px solid #747981;
+    pointer-events: none;
+  }
+  &:hover::after {
+    color: #dc3545;
+  }
+  &::after {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+}
 @-webkit-keyframes anim-2 {
   50% {
     opacity: 0;

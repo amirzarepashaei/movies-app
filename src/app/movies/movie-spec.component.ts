@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IMovie} from './movie';
-import { MovieService} from './movie.service';
+import { IMovie } from './movie';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'app-movie-spec',
@@ -10,7 +10,7 @@ import { MovieService} from './movie.service';
 })
 export class MovieSpecComponent implements OnInit {
 
-  pageTitle = 'Movie Specification';
+
   errorMessage = '';
   movie: IMovie | undefined;
 
